@@ -240,7 +240,6 @@ class Queue
             rotate();
         }
     }
-
 };
 
 #endif //CSE430_PROJECT_1_Q_H
