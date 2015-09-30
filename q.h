@@ -104,8 +104,9 @@ class Queue
         ~Queue()
         {
             // Iterate through list and delete elements
-            while(head != NULL){
-                QElement * temp = head;
+            QElement * temp = head;
+            while(temp != NULL){
+                temp = head;
                 head = head->getNext();
                 delete temp;
                 temp = NULL; // Not necessary
