@@ -83,19 +83,14 @@ class QElement
 class Queue
 {
     private:
-        /* Doubly-Linked structures need reference to head and tail.
-         * Size is needed because the structure is circular, we cannot
-         * rely on iterating till the "end" of the queue or else we
-         * would be stuck in an infinite loop. */
         QElement * head;
-        QElement * tail;
         int size;
 
     public:
         // Default Constructor
         Queue()
         {
-            head = tail = NULL;
+            head = NULL;
             size = 0;
         }
 
@@ -125,23 +120,25 @@ class Queue
             // No elements in Queue
             if(head == NULL)
             {
-                // Both head and tail should point to the same object
-                head = tail = element;
+                head = element;
 
                 // To make queue circular
-                head->setPrevious(tail);
-                tail->setNext(head);
+                head->setPrevious(head);
+                head->setNext(head);
             }
             // One or more elements in Queue
             else
             {
-                /* Add the element to the end of the Queue,
+                /* Instead of storing a class-wide tail variable, we can access
+                 * tail by using head->getPrevious(). This only works because the
+                 * queue is circular.
+                 * Add the element to the end of the Queue,
                  * Set the new elements's previous pointer to the existing tail,
                  * Set the tail to it's next pointer, which is the new element. */
+                QElement * tail = head->getPrevious();
                 tail->setNext(element);
                 element->setPrevious(tail);
                 tail = tail->getNext();
-
                 // To make queue circular
                 tail->setNext(head);
                 head->setPrevious(tail);
@@ -165,6 +162,9 @@ class Queue
                  * so grab it now */
                 QElement * temp = head;
 
+                /* Get reference to tail object before we start
+                 * changing things around */
+                QElement * tail = head->getPrevious();
                 /* Only one element in Queue.
                  * We cannot rely on head->getNext() == NULL
                  * because it is a circular Queue. */
@@ -188,7 +188,10 @@ class Queue
             }
         }
 
-        // Removes element from front of queue and puts at back
+        /* "Removes" element from front of queue and puts at back.
+         * No removing actually takes place.
+         *
+         * Returns false if nothing changes, true if something does change. */
         bool rotate()
         {
             // No elements in Queue, error
@@ -201,7 +204,7 @@ class Queue
             else if(size == 1)
             {
                 std::cout << "Error: No need to rotate, only 1 element" << std::endl;
-                return true;
+                return false;
             }
             // Multiple elements in Queue
             else
@@ -218,14 +221,13 @@ class Queue
                  * with a few unnecessary steps cut out. However,
                  * after closer inspection, I realized the only
                  * steps necessary were to set the head equal to
-                 * its next, and the tail equal to its next. Since
-                 * the Queue is circular, things like circling back
-                 * to the head just take care of themselves.
+                 * its next. Since the Queue is circular, things
+                 * like circling back to the head just take care
+                 * of themselves.
                  *
                  * Pretty neat!
                  * */
                 head = head->getNext();
-                tail = tail->getNext();
                 return true;
             }
         }
