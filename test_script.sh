@@ -4,20 +4,20 @@ make -f ./makefile
 
 let passed=0;
 let failed=0;
-for f in $(ls ./tests/*.txt); do
-	./executable/a.out <$f > ./tests/`basename $f .txt`.output;
+for f in $(ls ./test_cases/*.txt); do
+	./executable/a.out <$f > ./test_cases/`basename $f .txt`.output;
 done;
 
-for f in $(ls ./tests/*.output); do
-	diff -Bw $f  ./tests/`basename $f .output`.txt.expected > ./tests/`basename $f .output`.diff;
+for f in $(ls ./test_cases/*.output); do
+	diff -Bw $f  ./test_cases/`basename $f .output`.txt.expected > ./test_cases/`basename $f .output`.diff;
 done
 
-for f in $(ls tests/*.diff); do
+for f in $(ls test_cases/*.diff); do
 	echo "========================================================";
 	echo "FILE:" `basename $f .output`;
 	echo "========================================================";
 	if [ -s $f ]; then
-		cat ./tests/`basename $f .diff`.txt;
+		cat ./test_cases/`basename $f .diff`.txt;
 		echo "--------------------------------------------------------";
 		cat $f
 		failed=$((failed+1));
@@ -33,10 +33,10 @@ echo "--------------------------------------------------------";
 echo "                 cleaning up";
 echo "--------------------------------------------------------";
 
-echo "rm tests/*.output";
-rm tests/*.output
-echo "rm tests/*.diff";
-rm tests/*.diff
+echo "rm test_cases/*.output";
+rm test_cases/*.output
+echo "rm test_cases/*.diff";
+rm test_cases/*.diff
 make clean
 echo " ";
 
