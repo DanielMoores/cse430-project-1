@@ -3,8 +3,9 @@ CC = gcc
 CFLAGS = -Wall -c
 CXXFLAGS = -Wall
 
-OUTPUTDIR = ./executable/
-CODEDIR = ./code/
+# This path is relative to the test script, NOT this file.
+OUTPUTDIR = ./../building/executable/
+CODEDIR = ./../../code/
 MKDIR = mkdir -p $(OUTPUTDIR)
 
 HEADERS = q.h

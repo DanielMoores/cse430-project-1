@@ -1,11 +1,11 @@
 #!/bin/bash
 
-make -f ./makefile
+make -f ./../building/makefile
 
 let passed=0;
 let failed=0;
 for f in $(ls ./test_cases/*.txt); do
-	./executable/a.out <$f > ./test_cases/`basename $f .txt`.output;
+	./../building/executable/a.out <$f > ./test_cases/`basename $f .txt`.output;
 done;
 
 for f in $(ls ./test_cases/*.output); do
@@ -37,7 +37,7 @@ echo "rm test_cases/*.output";
 rm test_cases/*.output
 echo "rm test_cases/*.diff";
 rm test_cases/*.diff
-make clean
+make -C ./../building clean
 echo " ";
 
 
