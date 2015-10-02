@@ -75,7 +75,7 @@ class QElement
         // Print
         void print()
         {
-            std::cout << "Payload: " << payload;
+            printf("%d", payload);
         }
 };
 
@@ -152,7 +152,6 @@ class Queue
             // No elements in Queue
             if(head == NULL)
             {
-                std::cout << "Error: Queue is empty" << std::endl;
                 return NULL;
             }
             // One or more elements in Queue
@@ -197,13 +196,11 @@ class Queue
             // No elements in Queue, error
             if(size == 0)
             {
-                std::cout << "Error: Queue is empty" << std::endl;
                 return false;
             }
             // One element in Queue, already in rotated state
             else if(size == 1)
             {
-                std::cout << "Error: No need to rotate, only 1 element" << std::endl;
                 return false;
             }
             // Multiple elements in Queue
@@ -232,6 +229,33 @@ class Queue
             }
         }
 
+        /* Iterates through the Queue the specified
+         * number of times. This helps to make sure
+         * the Queue's "circularity" is working
+         * properly, and all links are valid. */
+        void iterate(int numTimes)
+        {
+            QElement * temp = head;
+            for(int i = 0; i < size * numTimes; i++)
+            {
+                temp->print();
+                printf(" ");
+                temp = temp->getNext();
+            }
+        }
+
+        /* Rotates the Queue the specified
+         * number of times instead of needing
+         * to call it manually that number of
+         * times. */
+        void rotate(int numTimes)
+        {
+            for(int i = 0; i < numTimes; i++)
+            {
+                rotate();
+            }
+        }
+
         int getSize()
         {
             return size;
@@ -246,45 +270,20 @@ class Queue
         {
             if(head == NULL)
             {
-                std::cout << "Empty queue" << std::endl;
+                printf("Q = {  }\n");
             }
             else
             {
                 QElement * temp = head;
-
-                for(int i = 0; i < size; i++)
-                {
-                    temp->print();
-                    std::cout << std::endl;
-                    temp = temp->getNext();
-                }
-            }
-        }
-
-        /* Iterates through the Queue the specified
-         * number of times. This helps to make sure
-         * the Queue's "circularity" is working
-         * properly, and all links are valid. */
-        void iterate(int numTimes)
-        {
-            QElement * temp = head;
-            for(int i = 0; i < size * numTimes; i++)
-            {
+                printf("Q = { ");
                 temp->print();
-                std::cout << std::endl;
-                temp = temp->getNext();
-            }
-        }
-
-        /* Rotates the Queue the specified
-         * number of times instead of needing
-         * to call it manually that number of
-         * times. */
-        void rotate(int numTimes)
-        {
-            for(int i = 0; i < numTimes; i++)
-            {
-                rotate();
+                for(int i = 1; i < size; i++)
+                {
+                    printf(" , ");
+                    temp = temp->getNext();
+                    temp->print();
+                }
+                printf(" }");
             }
         }
 };
