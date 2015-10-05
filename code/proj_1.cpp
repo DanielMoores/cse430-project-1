@@ -72,7 +72,8 @@ int main()
                         e->print();
                         printf("\n");
                     }
-                    else{
+                    else
+                    {
                         error(ERROR_QUEUE_EMPTY);
                     }
                 }
@@ -166,7 +167,8 @@ int getInput(const std::string message)
 {
     int command = -1;
     printf("%s", message.c_str());
-    while (!(std::cin >> command)) {
+    while (!(std::cin >> command))
+    {
         std::cin.clear(); //clear bad input flag
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //discard input
         printf("%s\n", ERROR_INVALID_INPUT);
