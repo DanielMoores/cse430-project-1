@@ -11,17 +11,10 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41270d66-38e9-447a-a7f0-e06ce0f59c97" name="Default" comment="Placement of a couple brackets.">
-      <change type="DELETED" beforePath="D:\1 Documents\1 School\0 ASU\4 Fall 2015\CSE 430 - Operating Systems\Projects\cse430-project-1\.gitattributes" afterPath="" />
-      <change type="DELETED" beforePath="D:\1 Documents\1 School\0 ASU\4 Fall 2015\CSE 430 - Operating Systems\Projects\cse430-project-1\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\1 Documents\1 School\0 ASU\4 Fall 2015\CSE 430 - Operating Systems\Projects\cse430-project-1\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="D:\1 Documents\1 School\0 ASU\4 Fall 2015\CSE 430 - Operating Systems\Projects\cse430-project-1\.idea\cse430-project-1.iml" afterPath="" />
-      <change type="DELETED" beforePath="D:\1 Documents\1 School\0 ASU\4 Fall 2015\CSE 430 - Operating Systems\Projects\cse430-project-1\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\1 Documents\1 School\0 ASU\4 Fall 2015\CSE 430 - Operating Systems\Projects\cse430-project-1\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\1 Documents\1 School\0 ASU\4 Fall 2015\CSE 430 - Operating Systems\Projects\cse430-project-1\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\1 Documents\1 School\0 ASU\4 Fall 2015\CSE 430 - Operating Systems\Projects\cse430-project-1\.idea\workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\1 Documents\1 School\0 ASU\4 Fall 2015\CSE 430 - Operating Systems\Projects\cse430-project-1\CMakeLists.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extras/testing/test_script.sh" afterPath="$PROJECT_DIR$/extras/testing/test_script.sh" />
+    <list default="true" id="41270d66-38e9-447a-a7f0-e06ce0f59c97" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitattributes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cse430-project-1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -154,6 +147,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Build All">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="cse430_project_1" TARGET_NAME="cse430_project_1" CONFIG_NAME="Debug">
       <envs />
       <method />
@@ -257,7 +261,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444012915129</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Changed list of files to sync to Git/Github">
+      <created>1444086316740</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1444086316740</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -273,16 +283,16 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13561471" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13561471" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293011" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33825505" sideWeight="0.26932827" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293011" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4717742" sideWeight="0.495564" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3158602" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33825505" sideWeight="0.26932827" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -315,7 +325,8 @@
     <MESSAGE value="Fixed the makefile and the testing script, and added one test case. Changes need to be made to the code to make the testing process easier." />
     <MESSAGE value="Changed organization of files, and updated the makefile and test script to reflect the changes." />
     <MESSAGE value="Placement of a couple brackets." />
-    <option name="LAST_COMMIT_MESSAGE" value="Placement of a couple brackets." />
+    <MESSAGE value="Changed list of files to sync to Git/Github" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed list of files to sync to Git/Github" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
