@@ -27,6 +27,10 @@
 *.out
 *.app
 
+# IDE Files
+.idea/
+CMakeLists.txt
+
 # =========================
 # Operating System Files
 # =========================
