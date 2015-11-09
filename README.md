@@ -1,5 +1,7 @@
-# cse430-project-1 
-Scheduling Queues
+cse430-project-1 
+=============================
+
+###Topic: Scheduling Queues
 
 This is a project from our CSE 430 Operating Systems class at Arizona State University.  There is a project specification PDF located inside 
 
