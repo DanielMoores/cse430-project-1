@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/.gitattributes" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.gitignore" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/code/proj-4.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/code/q.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/code/sem.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/code/tcb.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/code/threads.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/extras/build/makefile" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/extras/build/run.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/extras/specifications/project_specifications.pdf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/README.md" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/cilk" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/sanitizer" />
+          <root url="file:///usr/local/include" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/cilk" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.9/include/sanitizer" />
+          <root url="file:///usr/local/include" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>

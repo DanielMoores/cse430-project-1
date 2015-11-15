@@ -28,7 +28,7 @@
 *.app
 
 # IDE Files
-.idea/
+/*/*/.idea/
 CMakeLists.txt
 
 # =========================
