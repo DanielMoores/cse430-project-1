@@ -28,8 +28,9 @@
 *.app
 
 # IDE Files
-/*/.idea/
-/*/CMakeLists.txt
+*/.idea/
+*/.idea/
+*/CMakeLists.txt
 
 # =========================
 # Operating System Files
