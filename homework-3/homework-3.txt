@@ -8,7 +8,6 @@
 //      11-16-2015
 //==================================================================
 
-
 //------------------------------
 // 	Problem 1A
 //------------------------------
@@ -20,32 +19,35 @@ void shift(int *A, int *B){
 
 typedef struct Semaphore
 {
-    int value, lock;	//value act as a counter
+    int value, lock;
 } Semaphore;
 
 void P(Semaphore *S) {
-    while () {        //lock, atomic
-        shift();    //lock, atomic
+    int a = 0;
+    while (a == 0) {
+        shift(s->lock, a);
     }
     while (S->value == 0) {
-        S->lock = 0;    //unlock
-        while () {        //lock, atomic
-            shift();    //lock, atomic
+        S->lock = 1;    //unlock
+        while (s->value == 0) {
+            int a = 0;
+            while(a == 0){
+                shift(s->lock, a);
+            }
         }
     }
     S->value--;
-    S->lock = 0;    //unlock
+    S->lock = 1;
 }
 
 void V(Semaphore *S) {
-    while () {        //lock, atomic
-        shift();    //lock, atomic
+    int a = 0;
+    while (a == 0) {
+        shift(s->lock, a);
     }
     S->value++;
-    S->lock = 0;  //unlock
+    S->lock = 1;
 }
-
-
 
 //------------------------------
 // 	Problem 1B
@@ -57,27 +59,68 @@ typedef struct Semaphore
     Queue * tcb_queue;
 } Semaphore;
 
-P(Semaphore *S):	//aka Down or Wait
-	while(){		//lock, atomic
-		shift();	//lock, atomic
+P(Semaphore *S){
+    int a = 0;
+	while(a == 0){
+		shift(s->lock, a);
 	}
 	S->value--;
 	if (S->value < 0){
-		addQ(S->tcb_queue, delQ(RunQ));
-		S->lock = 0;  		//unlock
-		swapcontext()		//block()? maybe?
+	    TCB * tcb = delQ(runQ);
+		addQ(S->tcb_queue, tcb);
+		S->lock = 0;
+		swapcontext(&tcb->context, &runQ->head->context);
 	}
+}
 
-V(Semaphore *S):	//aka Up or Signal
-	while(){		//lock, atomic
-		shift();	//lock, atomic
+V(Semaphore *S){
+    int a = 0;
+	while(a == 0){
+		shift(s->lock, a);
 	}
 	S->value++
 	if (S->value <= 0){
 		AddQ(RunQ, delQ(S->tcb_queue));
 	}
 	//yeild();
-	S->lock = 0;  //unlock
+	S->lock = 1;
+}
+
+
+//------------------------------
+// 	Problem 2
+//------------------------------
+
+int x = 0;
+int s1 = 1;
+int s2 = 0;
+
+void P0(){
+	p(s1);
+	x++;
+	v(s2);
+}
+
+void P1(){
+	P(s2);
+	if(x%1==0)
+		print(x);
+	V(s1);
+}
+
+void P2(){
+	P(s2);
+	if(x%2==0)
+		print(x);
+	V(s1);
+}
+
+void P3(){
+	P(s2);
+	if(x%3==0)
+		print(x);
+	V(s1);
+}
 
 
 
@@ -92,34 +135,6 @@ Enq(r):
 	if ()
 
 
-
 //------------------------------
-// 	Problem 2
+// 	Problem 4
 //------------------------------
-
-int x = 0;
-int s1 = 1;
-int s2 = 0;
-
-P0:
-	p(s1);
-	x++;
-	v(s2);
-
-P1:
-	P(s2);
-	if(x%1==0)
-		print(x);
-	V(s1);
-
-P2:
-	P(s2);
-	if(x%2==0)
-		print(x);
-	V(s1);
-
-P3:
-	P(s2);
-	if(x%3==0)
-		print(x);
-	V(s1);
