@@ -22,13 +22,13 @@ typedef struct Semaphore
     int value, lock;
 } Semaphore;
 
-void P(Semaphore *S) {
+void P(Semaphore *s) {
     int a = 0;
     while (a == 0) {
         shift(s->lock, a);
     }
     while (S->value == 0) {
-        S->lock = 1;    //unlock
+        s->lock = 1;
         while (s->value == 0) {
             int a = 0;
             while(a == 0){
@@ -36,22 +36,27 @@ void P(Semaphore *S) {
             }
         }
     }
-    S->value--;
-    S->lock = 1;
+    s->value--;
+    s->lock = 1;
 }
 
-void V(Semaphore *S) {
+void V(Semaphore *s) {
     int a = 0;
     while (a == 0) {
         shift(s->lock, a);
     }
-    S->value++;
-    S->lock = 1;
+    s->value++;
+    s->lock = 1;
 }
 
 //------------------------------
 // 	Problem 1B
 //------------------------------
+
+void shift(int *A, int *B){
+    *B = *A;
+    *A = 0;
+}
 
 typedef struct Semaphore
 {
@@ -59,31 +64,31 @@ typedef struct Semaphore
     Queue * tcb_queue;
 } Semaphore;
 
-P(Semaphore *S){
+P(Semaphore *s){
     int a = 0;
 	while(a == 0){
 		shift(s->lock, a);
 	}
-	S->value--;
-	if (S->value < 0){
+	s->value--;
+	if (s->value < 0){
 	    TCB * tcb = delQ(runQ);
-		addQ(S->tcb_queue, tcb);
-		S->lock = 0;
+		addQ(s->tcb_queue, tcb);
+		s->lock = 0;
 		swapcontext(&tcb->context, &runQ->head->context);
 	}
 }
 
-V(Semaphore *S){
+V(Semaphore *s){
     int a = 0;
 	while(a == 0){
 		shift(s->lock, a);
 	}
 	S->value++
-	if (S->value <= 0){
-		AddQ(RunQ, delQ(S->tcb_queue));
+	if (s->value <= 0){
+		AddQ(RunQ, delQ(s->tcb_queue));
 	}
 	//yeild();
-	S->lock = 1;
+	s->lock = 1;
 }
 
 
@@ -129,8 +134,8 @@ void P3(){
 //------------------------------
 
 Enq(r):
-	while(){		//lock, atomic
-		shift();	//lock, atomic
+	while(){
+		shift();
 	}
 	if ()
 
@@ -138,3 +143,30 @@ Enq(r):
 //------------------------------
 // 	Problem 4
 //------------------------------
+
+typedef struct Semaphore
+{
+    int value, lock;
+    Queue * mutex;
+    Queue * block;
+} Semaphore;
+
+void P(Semaphore *s){
+    ENQ(s->
+}
+
+
+void V(Semaphore *s){
+
+}
+
+
+
+
+
+
+
+
+
+
+
