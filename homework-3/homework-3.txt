@@ -147,14 +147,12 @@ Enq(r):
 typedef struct Semaphore
 {
     int value, lock;
-    Queue * mutex;
-    Queue * block;
+    Queue * q;
 } Semaphore;
 
 void P(Semaphore *s){
     ENQ(s->
 }
-
 
 void V(Semaphore *s){
 

@@ -19,5 +19,8 @@
 int main()
 {
     printf("Project 4");
+    mutex = InitSem(0);
+    rsem = InitSem(0);
+    wsem = InitSem(0);
     return 0;
 }

@@ -30,10 +30,6 @@ Semaphore *mutex;
 Semaphore *rsem;
 Semaphore *wsem;
 
-mutex = InitSem(0);
-rsem = InitSem(0);
-wsem = InitSEm(0);
-
 int wwc, wc, rwc, rc = 0;	//waiting write count, waiting count, reader waiting count, reader count
 
 void P(Semaphore * sem);
