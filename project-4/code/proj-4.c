@@ -22,5 +22,14 @@ int main()
     mutex = InitSem(0);
     rsem = InitSem(0);
     wsem = InitSem(0);
+
+    start_thread(writer);
+    start_thread(writer);
+    start_thread(reader);
+    start_thread(reader);
+    start_thread(reader);
+
+    run();
+
     return 0;
 }
